@@ -1,14 +1,10 @@
 ---
-#who is the agent - name
 - hosts: web
-
-#we need details about the server
   gather_facts: yes
-
-#we need sudo access
   become: true
 
-#task to replace file
+  #reverse proxy by replacing default file
+  #restart nginx so it uses new config
   tasks:
   - name: delete file
     file:
@@ -19,7 +15,6 @@
     copy:
       src: default
       dest: /etc/nginx/sites-available
-
   - name: restart nginx
     service: name=nginx state=restarted enabled=yes
 

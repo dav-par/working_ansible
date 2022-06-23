@@ -1,19 +1,18 @@
 ---
-
-# Install Mongo
-# Connect to app instance
-# By the environmental variable
-
 - hosts: db
   gather_facts: yes
   become: true
+
+  #install mongodb
+  #copy over config file
+  #restart mongodb
   tasks:
   - name: Installing Mongodb
     apt: pkg=mongodb state=present update_cache=yes
 
   - name: Changing Mongo.conf file
     copy:
-      src: mongod.conf
+      src: mongodb.conf
       dest: /etc/mongodb.conf
 
   - name: Restarting Mongo
