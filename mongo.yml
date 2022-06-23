@@ -1,0 +1,23 @@
+---
+
+# Install Mongo
+# Connect to app instance
+# By the environmental variable
+
+- hosts: db
+  gather_facts: yes
+  become: true
+  tasks:
+  - name: Installing Mongodb
+    apt: pkg=mongodb state=present update_cache=yes
+
+  - name: Changing Mongo.conf file
+    copy:
+      src: mongod.conf
+      dest: /etc/mongodb.conf
+
+  - name: Restarting Mongo
+    ansible.builtin.service:
+      name: mongodb
+      state: restarted
+      enabled: true

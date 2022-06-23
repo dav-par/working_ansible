@@ -1,0 +1,17 @@
+---
+#who is the agent - name
+- hosts: web
+
+#we need details about the server
+  gather_facts: yes
+
+#we need sudo access
+  become: true
+
+#instructions to install nginx in web agent node
+
+  tasks:
+  - name: Install Nginx web server
+    apt: pkg=nginx state=present
+
+#we need to ensure that nginx is running
