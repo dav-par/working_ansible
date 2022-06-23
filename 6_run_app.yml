@@ -11,6 +11,6 @@
       cd app/app/
       npm i
       node seeds/seed.js
-      nohup node app.js > /dev/null 2>&1 &
+      npm start
     environment:
       DB_HOST: mongodb://192.168.33.11:27017/posts
