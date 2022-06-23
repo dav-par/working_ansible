@@ -1,11 +1,10 @@
 ---
-
-# Adding environment variable to app
-# Run Node App
-
 - hosts: web
   gather_facts: yes
   become: true
+  
+  # Adding environment variable to app
+  # Run Node App
   tasks:
   - name: Starting the app
     shell: |

@@ -1,14 +1,9 @@
 ---
-#who is the agent - name
-- hosts: all
-
-#we need details about the server
+- hosts: web
   gather_facts: yes
-
-#we need sudo access
   become: true
 
-#task to replace file
+  #copy app folder over
   tasks:
   - name: copy app over
     become: true

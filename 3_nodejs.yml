@@ -3,6 +3,7 @@
   gather_facts: yes
   become: true
 
+  #install nodejs and npm
   tasks:
   - name: Install Node
     apt: pkg=nodejs state=present update_cache=yes
