@@ -8,7 +8,7 @@
     key_name: eng114
     region: eu-west-1
     image:  ami-07b63aa1cfd3bc3a5
-    id: "eng114-david-ansible"
+    id: "eng114-david-ansible2"
     sec_group: "sg-08548fc7e8e3d2f45"
     subnet_id: "subnet-00e1f05c00494ae69"
 # add the following line if ansible by default uses python 2.7
