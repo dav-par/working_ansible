@@ -43,7 +43,7 @@
           aws_access_key: "{{aws_access_key}}"
           aws_secret_key: "{{aws_secret_key}}"
           assign_public_ip: true
-          key_name: "{{ key_name }}"
+          key_name: "{{ key_name }}" #update with pem key
           id: "{{ id }}"
           vpc_subnet_id: "{{ subnet_id }}"
           group_id: "{{ sec_group }}"
