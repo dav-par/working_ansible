@@ -1,6 +1,6 @@
 ---
 #who is the agent - name
-- hosts: web
+- hosts: app
 
 #we need details about the server
   gather_facts: yes

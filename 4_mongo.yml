@@ -1,5 +1,5 @@
 ---
-- hosts: db
+- hosts: dba
   gather_facts: yes
   become: true
 

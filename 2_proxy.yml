@@ -1,5 +1,5 @@
 ---
-- hosts: web
+- hosts: app
   gather_facts: yes
   become: true
 
