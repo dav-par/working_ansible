@@ -44,9 +44,9 @@
       shell: lsof -i -P -n | grep LISTEN
       register: port_check_3000
 
-    - name: confirm port 80 is listening
+    - name: confirm port 3000 is listening
       assert:
-        that: "'*:3000 (LISTEN)' in port_check_80.stdout"
+        that: "'*:3000 (LISTEN)' in port_check_3000.stdout"
 
 
 
