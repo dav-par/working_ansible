@@ -15,6 +15,6 @@
       dest: /etc/mongodb.conf
   - name: Restarting Mongo
     ansible.builtin.service:
-      name: mongodb
+      name: mongod
       state: restarted
       enabled: true

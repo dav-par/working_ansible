@@ -1,6 +1,6 @@
 ---
 - name: tests
-  hosts: app
+  hosts: all
   become: yes
   gather_facts: yes
   tasks:
@@ -23,7 +23,7 @@
 
 
     - name: update if Centos
-      ansible.builtin.command: yum check-update
+      ansible.builtin.command: yum update
       when: ansible_facts['os_family'] == "Centos"
 
 
@@ -47,6 +47,3 @@
     - name: confirm port 3000 is listening
       assert:
         that: "'*:3000 (LISTEN)' in port_check_3000.stdout"
-
-
-

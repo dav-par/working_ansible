@@ -1,0 +1,47 @@
+---
+- name: tests
+  hosts: app
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: store date output for timezone check
+      command: date
+      register: check_tz
+
+    - name: check tz
+      assert:
+        that: "'UTC' in check_tz.stdout"
+
+    - name: "Check if NGINX is installed"
+      package_facts:
+        manager: "auto"
+
+    - name: confirm nginx is installed
+      assert:
+        that: "'nginx' in ansible_facts.packages"
+
+    - name: Check if port 80 is listening
+      shell: lsof -i -P -n | grep LISTEN
+      register: port_check
+
+    - name: confirm port 80 is listening
+      assert:
+        that: "'*:80 (LISTEN)' in port_check.stdout"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

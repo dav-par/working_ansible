@@ -7,7 +7,7 @@
   vars:
     key_name: eng114
     region: eu-west-1
-    image:  ami-07b63aa1cfd3bc3a5
+    image:  ami-0eecf033d2b64a2cb
     id: "eng114-david-ansible2"
     sec_group: "sg-08548fc7e8e3d2f45"
     subnet_id: "subnet-00e1f05c00494ae69"

@@ -1,0 +1,21 @@
+---
+- name: tests
+  hosts: app
+  become: yes
+  gather_facts: yes
+  tasks:
+    - name: set timezone to UTC
+      timezone:
+        name: UTC
+
+    - name: install nginx
+      apt:
+        pkg: nginx
+        state: present
+
+    - name: start nginx
+      service:
+        name: nginx
+        state: started
+
+
